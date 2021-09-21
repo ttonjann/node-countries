@@ -17,7 +17,7 @@ countryForm.addEventListener("submit", (e) => {
     currency.textContent = ""
 
 
-    fetch("http://localhost:3000/result?country=" + location).then((response) => {
+    fetch("/result?country=" + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 country.textContent = data.error

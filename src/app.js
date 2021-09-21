@@ -5,6 +5,8 @@ const information = require("./utils/information")
 
 
 const app = express()
+// Port voor heroku en anders lokaal
+const port = process.env.PORT || 3000
 
 // Link naar de statische bestanden
 const publicDirectoryPath = path.join(__dirname, "../public")
@@ -39,6 +41,6 @@ app.get("/result", (req, res) => {
 
 
 // Start de server
-app.listen(3000, () => {
-    console.log("Server is up on port 3000.")
+app.listen(port, () => {
+    console.log("Server is up on port " + port)
 })
