@@ -23,9 +23,8 @@ countryForm.addEventListener("submit", (e) => {
                 country.textContent = data.error
             } else{
                 country.textContent = "Country: " + data.name
-                language.textContent = "Language: " + data.language
-                population.textContent = "Population: " + data.population
-                currency.textContent = "Currency: " + data.currency
+                language.textContent = "Capital: " + data.capital
+                population.textContent = "Region: " + data.region
             }
         })
     })

@@ -32,9 +32,8 @@ app.get("/result", (req, res) => {
         }
         res.send({
             name: countryInformation.name,
-            language: countryInformation.language,
-            population: countryInformation.population,
-            currency: countryInformation.currency
+            capital: countryInformation.capital,
+            region: countryInformation.region,
         })
     })
 })

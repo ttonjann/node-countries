@@ -3,7 +3,7 @@ const request = require("postman-request")
 
 // Haalt de benodigde informatie van de API
 const information = (country, callback) => {
-    const url = "https://restcountries.eu/rest/v2/name/" + encodeURIComponent(country)
+    const url = "http://api.countrylayer.com/v2/name/" + encodeURIComponent(country) + "?access_key=dd12ab865aba34edc1e71a5be1ff5c64"
     request({url, json: true}, (error, {body}) => {
             if (error) {
                 callback("You must provide country", undefined)
@@ -11,9 +11,8 @@ const information = (country, callback) => {
                 callback("You must provide country", undefined)
             } else {callback(undefined, {
                 name: body[0].name,
-                language: body[0].languages[0].name,
-                population: body[0].population,
-                currency: body[0].currencies[0].name,  
+                capital: body[0].capital,
+                region: body[0].region, 
             })
         }
         
