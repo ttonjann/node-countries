@@ -1,9 +1,8 @@
 const countryForm = document.querySelector("form")
 const search = document.querySelector("input")
 const country = document.querySelector("#country")
-const language = document.querySelector("#language")
-const population = document.querySelector("#population")
-const currency = document.querySelector("#currency")
+const capital = document.querySelector("#capital")
+const region = document.querySelector("#region")
 
 // Maakt het mogelijk om via de input een zoekactie te maken
 countryForm.addEventListener("submit", (e) => {
@@ -12,9 +11,8 @@ countryForm.addEventListener("submit", (e) => {
     const location = search.value
 
     country.textContent = "Loading..."
-    language.textContent = ""
-    population.textContent = ""
-    currency.textContent = ""
+    capital.textContent = ""
+    region.textContent = ""
 
     fetch("/result?country=" + location).then((response) => {
         response.json().then((data) => {
@@ -22,8 +20,8 @@ countryForm.addEventListener("submit", (e) => {
                 country.textContent = data.error
             } else{
                 country.textContent = "Country: " + data.name
-                language.textContent = "Capital: " + data.capital
-                population.textContent = "Region: " + data.region
+                capital.textContent = "Capital: " + data.capital
+                region.textContent = "Region: " + data.region
             }
         })
     })
