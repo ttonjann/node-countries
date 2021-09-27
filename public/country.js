@@ -16,7 +16,6 @@ countryForm.addEventListener("submit", (e) => {
     population.textContent = ""
     currency.textContent = ""
 
-// test
     fetch("/result?country=" + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
