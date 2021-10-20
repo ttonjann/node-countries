@@ -6,7 +6,7 @@ const information = require("./utils/information")
 
 const app = express()
 // Port voor heroku en anders lokaal
-const port = process.env.PORT || 3000
+const port = 80 || 3000
 
 // Link naar de statische bestanden
 const publicDirectoryPath = path.join(__dirname, "../public")
